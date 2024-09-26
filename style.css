@@ -1,0 +1,62 @@
+body{
+    
+    background-image: url('img/backgroud.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+}
+.tudo{
+    justify-content: center;
+    max-width: 100%;
+    max-height: 600px;
+    display: flex;
+    
+}
+.main{
+    width: 400px;
+    height: 400px;
+    border: solid 3px;
+    border-radius: 20px;
+    background-color: white;
+    
+}   
+
+.main img{
+    overflow: hidden;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    margin: auto;
+    
+
+}
+#colorPalette {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 100px;
+    margin-bottom: 10px;
+
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin-top: 2px;
+    
+    
+}
+
+
+#gridCanvas{
+    margin-right: 30px;
+    width: 400px;
+    height: 400px;
+    border: solid 3px;
+    border-radius: 20px;
+    background-color: white;
+    
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pixel Arte</title>
+</head>
+<body>
+    <h1>Pixel arte é vida</h1>
+    <audio id="marioMusic" loop>
+        <source src="Musicas/Super Mario Bros. Theme Song.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+    
+    <button id="playButton">Tocar Música</button>
+    
+    <div class="tudo">
+        
+        <div class="main">
+            <img src="img/pixel-art-do-mario-bros.png.webp" alt="Mario">
+        </div>
+        <div id="colorPalette">
+            <div class="color" style="background-color: #e0ac8a;" data-color="#e0ac8a"></div> <!-- Cor rosa -->
+            <div class="color" style="background-color: #CA1923;" data-color="#CA1923"></div> <!-- Roupa do Mario -->
+            <div class="color" style="background-color: #2026B3;" data-color="#2026B3"></div> <!-- Macacão do Mario -->
+            <div class="color" style="background-color: green;" data-color="green"></div> <!-- Roupa do Luigi -->
+            <div class="color" style="background-color: darkblue;" data-color="darkblue"></div> <!-- Macacão do Luigi -->
+            <div class="color" style="background-color: #FFC211;" data-color="#FFC211"></div> <!-- Capa ou detalhes -->
+            <div class="color" style="background-color: black;" data-color="black"></div> <!-- Cinto -->
+            <div class="color" style="background-color: white;" data-color="white"></div> <!-- Luvas -->
+            <div class="color" style="background-color: #9A5B3A;" data-color="#9A5B3A"></div> <!-- Outras opções -->
+            <div class="color" style="background-color: purple;" data-color="purple"></div> <!-- Detalhes extras -->
+            
+
+            <!-- Adicione mais cores conforme necessário -->
+        </div>
+        <canvas id="gridCanvas" width="400" height="400">
+
+        </canvas>
+    </div>
+
+    <script>
+        document.getElementById('playButton').onclick = function() {
+            const music = document.getElementById('marioMusic');
+            music.play().catch(error => {
+                console.log("Erro ao tentar tocar a música: " + error);
+            });
+        };
+
+
+        const canvas = document.getElementById('gridCanvas')
+        const ctx = canvas.getContext('2d');
+
+        const gridSize = 10;
+
+        for(let x = 0;x<= canvas.width;x+=gridSize){
+            ctx.moveTo(x,0)
+            ctx.lineTo(x,canvas.height)
+        }
+
+        for(let y = 0;y<= canvas.height;y+=gridSize){
+            ctx.moveTo(0,y)
+            ctx.lineTo(canvas.width,y)
+        }
+
+        ctx.strokeStyle = "black";
+        ctx.stroke()
+
+        function drawOutline(){
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 3;
+
+            ctx.beginPath();
+            ctx.moveTo(180, 60)
+            ctx.lineTo(220, 60)
+            ctx.moveTo(180, 60)
+            ctx.lineTo(180, 70)
+            ctx.moveTo(220, 70)
+            ctx.lineTo(220, 60)
+            ctx.moveTo(160, 70)
+            ctx.lineTo(240, 70)
+            ctx.lineTo(240, 80)
+            ctx.moveTo(160, 70)
+            ctx.lineTo(160, 70)
+            ctx.moveTo(160, 70)
+            ctx.lineTo(180, 70)
+            ctx.moveTo(180, 80)
+            ctx.lineTo(180, 70)
+            ctx.moveTo(230, 80)
+            ctx.lineTo(230, 80)
+            ctx.lineTo(240, 80)
+            ctx.moveTo(220, 70)
+            ctx.lineTo(220, 80)
+            ctx.moveTo(150, 80)
+            ctx.lineTo(180, 80)
+            ctx.moveTo(150, 80)
+            ctx.lineTo(150, 90)
+            ctx.moveTo(160, 80)
+            ctx.lineTo(160, 90)
+            ctx.moveTo(140, 90)
+            ctx.lineTo(160, 90)
+            ctx.moveTo(140, 90)
+            ctx.lineTo(140, 140)
+            ctx.moveTo(130, 100)
+            ctx.lineTo(150, 100)
+            ctx.moveTo(150, 100)
+            ctx.lineTo(150, 90)
+            ctx.moveTo(130, 100)
+            ctx.lineTo(130, 180)
+            ctx.moveTo(120, 170)
+            ctx.lineTo(140, 170)
+            ctx.moveTo(140, 170)
+            ctx.lineTo(140, 150)
+            ctx.moveTo(140, 150)
+            ctx.lineTo(120, 150)
+            ctx.moveTo(120, 150)
+            ctx.lineTo(120, 150)
+            ctx.moveTo(220, 80)
+            ctx.lineTo(230, 80)
+            ctx.moveTo(140, 140)
+            ctx.lineTo(170, 140)
+            ctx.moveTo(150, 120)
+            ctx.lineTo(150, 160)
+            ctx.moveTo(170, 130)
+            ctx.lineTo(230, 130)
+            ctx.moveTo(160, 70)
+            ctx.lineTo(160, 80)
+            ctx.moveTo(170, 130)
+            ctx.lineTo(170, 160)
+            ctx.moveTo(170, 160)
+            ctx.lineTo(190, 160)
+            ctx.moveTo(190, 160)
+            ctx.lineTo(190, 130)
+            ctx.moveTo(180, 160)
+            ctx.lineTo(180, 140)
+            ctx.moveTo(180, 140)
+            ctx.lineTo(190, 140)
+            ctx.moveTo(150, 120)
+            ctx.lineTo(160, 120)
+            ctx.moveTo(160, 120)
+            ctx.lineTo(160, 110)
+            ctx.moveTo(160, 110)
+            ctx.lineTo(170, 110)
+            ctx.moveTo(170, 110)
+            ctx.lineTo(170, 100)
+            ctx.moveTo(170, 100)
+            ctx.lineTo(230, 100)
+            ctx.moveTo(230, 100)
+            ctx.lineTo(230, 110)
+            ctx.moveTo(230, 110)
+            ctx.lineTo(240, 110)
+            ctx.moveTo(240, 110)
+            ctx.lineTo(240, 120)
+            ctx.moveTo(240, 120)
+            ctx.lineTo(250, 120)
+            ctx.moveTo(250, 120)
+            ctx.lineTo(250, 140)
+            ctx.moveTo(230, 140)
+            ctx.lineTo(260, 140)
+            ctx.moveTo(260, 140)
+            ctx.lineTo(260, 100)
+            ctx.moveTo(260, 100)
+            ctx.lineTo(250, 100)
+            ctx.moveTo(250, 100)
+            ctx.lineTo(250, 90)
+            ctx.moveTo(250, 90)
+            ctx.lineTo(240, 90)
+            ctx.moveTo(240, 90)
+            ctx.lineTo(240, 80)
+            ctx.moveTo(240, 80)
+            ctx.lineTo(250, 80)
+            ctx.moveTo(250, 80)
+            ctx.lineTo(250, 90)
+            ctx.moveTo(250, 90)
+            ctx.lineTo(260, 90)
+            ctx.moveTo(260, 90)
+            ctx.lineTo(260, 100)
+            ctx.moveTo(260, 100)
+            ctx.lineTo(270, 100)
+            ctx.moveTo(270, 100)
+            ctx.lineTo(270, 180)
+            ctx.moveTo(230, 130)
+            ctx.lineTo(230, 160)
+            ctx.moveTo(230, 160)
+            ctx.lineTo(210, 160)
+            ctx.moveTo(210, 160)
+            ctx.lineTo(210, 130)
+            ctx.moveTo(220, 160)
+            ctx.lineTo(220, 140)
+            ctx.moveTo(220, 140)
+            ctx.lineTo(210, 140)
+            ctx.moveTo(150, 160)
+            ctx.lineTo(160, 160)
+            ctx.moveTo(160, 160)
+            ctx.lineTo(160, 170)
+            ctx.moveTo(160, 170)
+            ctx.lineTo(150, 170)
+            ctx.moveTo(150, 170)
+            ctx.lineTo(150, 200)
+            ctx.moveTo(150, 200)
+            ctx.lineTo(250, 200)
+            ctx.moveTo(250, 200)
+            ctx.lineTo(250, 170)
+            ctx.moveTo(250, 170)
+            ctx.lineTo(220, 170)
+            ctx.moveTo(220, 170)
+            ctx.lineTo(220, 180)
+            ctx.moveTo(220, 180)
+            ctx.lineTo(180, 180)
+            ctx.moveTo(180, 180)
+            ctx.lineTo(180, 170)
+            ctx.moveTo(180, 170)
+            ctx.lineTo(160, 170)
+            ctx.moveTo(160, 170)
+            ctx.lineTo(160, 300)
+            ctx.moveTo(130, 180)
+            ctx.lineTo(140, 180)
+            ctx.moveTo(140, 180)
+            ctx.lineTo(140, 190)
+            ctx.moveTo(140, 190)
+            ctx.lineTo(170, 190)
+            ctx.moveTo(170, 190)
+            ctx.lineTo(170, 210)
+            ctx.moveTo(170, 210)
+            ctx.lineTo(230, 210)
+            ctx.moveTo(230, 210)
+            ctx.lineTo(230, 190)
+            ctx.moveTo(230, 190)
+            ctx.lineTo(260, 190)
+            ctx.moveTo(260, 190)
+            ctx.lineTo(260, 180)
+            ctx.moveTo(260, 180)
+            ctx.lineTo(270, 180)
+            ctx.moveTo(260, 170)
+            ctx.lineTo(280, 170)
+            ctx.moveTo(280, 170)
+            ctx.lineTo(280, 150)
+            ctx.moveTo(280, 150)
+            ctx.lineTo(260, 150)
+            ctx.moveTo(260, 150)
+            ctx.lineTo(260, 170)
+            ctx.moveTo(120, 150)
+            ctx.lineTo(120, 170)
+            ctx.moveTo(250, 140)
+            ctx.lineTo(250, 160)
+            ctx.moveTo(250, 160)
+            ctx.lineTo(240, 160)
+            ctx.moveTo(240, 160)
+            ctx.lineTo(240, 170)
+            ctx.moveTo(130, 220)
+            ctx.lineTo(270, 220)
+            ctx.moveTo(240, 170)
+            ctx.lineTo(240, 220)
+            ctx.moveTo(180, 100)
+            ctx.lineTo(180, 90)
+            ctx.moveTo(180, 90)
+            ctx.lineTo(190, 90)
+            ctx.moveTo(190, 90)
+            ctx.lineTo(190, 80)
+            ctx.moveTo(190, 80)
+            ctx.lineTo(210, 80)
+            ctx.moveTo(210, 80)
+            ctx.lineTo(210, 90)
+            ctx.moveTo(210, 90)
+            ctx.lineTo(220, 90)
+            ctx.moveTo(220, 90)
+            ctx.lineTo(220, 100)
+            ctx.moveTo(120, 230)
+            ctx.lineTo(190, 230)
+            ctx.moveTo(210, 230)
+            ctx.lineTo(280, 230)
+            ctx.moveTo(240, 220)
+            ctx.lineTo(240, 300)
+            ctx.moveTo(120, 230)
+            ctx.lineTo(120, 300)
+            ctx.moveTo(110, 260)
+            ctx.lineTo(110, 290)
+            ctx.moveTo(110, 290)
+            ctx.lineTo(150, 290)
+            ctx.moveTo(110, 260)
+            ctx.lineTo(130, 260)
+            ctx.moveTo(130, 260)
+            ctx.lineTo(130, 220)
+            ctx.moveTo(120, 240)
+            ctx.lineTo(150, 240)
+            ctx.moveTo(120, 250)
+            ctx.lineTo(160, 250)
+            ctx.moveTo(150, 240)
+            ctx.lineTo(150, 260)
+            ctx.moveTo(150, 260)
+            ctx.lineTo(170, 260)
+            ctx.moveTo(170, 260)
+            ctx.lineTo(170, 280)
+            ctx.moveTo(170, 280)
+            ctx.lineTo(150, 280)
+            ctx.moveTo(150, 280)
+            ctx.lineTo(150, 290)
+            ctx.moveTo(120, 300)
+            ctx.lineTo(140, 300)
+            ctx.moveTo(140, 300)
+            ctx.lineTo(140, 340)
+            ctx.moveTo(130, 330)
+            ctx.lineTo(180, 330)
+            ctx.moveTo(180, 300)
+            ctx.lineTo(180, 350)
+            ctx.moveTo(180, 350)
+            ctx.lineTo(130, 350)
+            ctx.moveTo(130, 350)
+            ctx.lineTo(130, 330)
+            ctx.moveTo(120, 340)
+            ctx.lineTo(140, 340)
+            ctx.moveTo(120, 340)
+            ctx.lineTo(120, 360)
+            ctx.moveTo(120, 360)
+            ctx.lineTo(190, 360)
+            ctx.moveTo(190, 360)
+            ctx.lineTo(190, 310)
+            ctx.moveTo(190, 310)
+            ctx.lineTo(210, 310)
+            ctx.moveTo(210, 310)
+            ctx.lineTo(210, 360)
+            ctx.moveTo(210, 360)
+            ctx.lineTo(280, 360)
+            ctx.moveTo(280, 360)
+            ctx.lineTo(280, 340)
+            ctx.moveTo(280, 340)
+            ctx.lineTo(260, 340)
+            ctx.moveTo(260, 340)
+            ctx.lineTo(260, 300)
+            ctx.moveTo(260, 300)
+            ctx.lineTo(280, 300)
+            ctx.moveTo(280, 300)
+            ctx.lineTo(280, 230)
+            ctx.moveTo(270, 220)
+            ctx.lineTo(270, 260)
+            ctx.moveTo(270, 260)
+            ctx.lineTo(290, 260)
+            ctx.moveTo(290, 260)
+            ctx.lineTo(290, 290)
+            ctx.moveTo(290, 290)
+            ctx.lineTo(250, 290)
+            ctx.moveTo(250, 290)
+            ctx.lineTo(250, 280)
+            ctx.moveTo(250, 280)
+            ctx.lineTo(230, 280)
+            ctx.moveTo(230, 280)
+            ctx.lineTo(230, 260)
+            ctx.moveTo(230, 260)
+            ctx.lineTo(250, 260)
+            ctx.moveTo(250, 260)
+            ctx.lineTo(250, 240)
+            ctx.moveTo(250, 240)
+            ctx.lineTo(280, 240)
+            ctx.moveTo(280, 250)
+            ctx.lineTo(240, 250)
+            ctx.moveTo(230, 220)
+            ctx.lineTo(230, 250)
+            ctx.moveTo(230, 250)
+            ctx.lineTo(210, 250)
+            ctx.moveTo(210, 250)
+            ctx.lineTo(210, 220)
+            ctx.moveTo(210, 240)
+            ctx.lineTo(190, 240)
+            ctx.moveTo(190, 250)
+            ctx.lineTo(190, 220)
+            ctx.moveTo(190, 250)
+            ctx.lineTo(170, 250)
+            ctx.moveTo(170, 250)
+            ctx.lineTo(170, 220)
+            ctx.moveTo(160, 300)
+            ctx.lineTo(150, 300)
+            ctx.moveTo(150, 300)
+            ctx.lineTo(150, 330)
+            ctx.moveTo(180, 300)
+            ctx.lineTo(220, 300)
+            ctx.moveTo(220, 300)
+            ctx.lineTo(220, 350)
+            ctx.moveTo(220, 350)
+            ctx.lineTo(270, 350)
+            ctx.moveTo(270, 350)
+            ctx.lineTo(270, 330)
+            ctx.moveTo(270, 330)
+            ctx.lineTo(220, 330)
+            ctx.moveTo(250, 330)
+            ctx.lineTo(250, 300)
+            ctx.moveTo(250, 300)
+            ctx.lineTo(240, 300)
+
+            ctx.closePath();
+            ctx.stroke();
+        }
+
+        drawOutline()
+
+        let selectedColor = 'black'; // Cor padrão
+
+// Evento para selecionar a cor ao clicar na paleta
+document.querySelectorAll('.color').forEach(colorDiv => {
+    colorDiv.addEventListener('click', () => {
+        selectedColor = colorDiv.dataset.color;
+    });
+});
+
+// Evento para colorir o canvas ao clicar
+canvas.addEventListener('click', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.floor((event.clientX - rect.left) / gridSize) * gridSize;
+    const y = Math.floor((event.clientY - rect.top) / gridSize) * gridSize;
+    
+    ctx.fillStyle = selectedColor;
+    ctx.fillRect(x, y, gridSize, gridSize);
+});
+        
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
